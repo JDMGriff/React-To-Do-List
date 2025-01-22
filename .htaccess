@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /my-app/
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Ensure JavaScript files are served with the correct MIME type
+AddType application/javascript .js
